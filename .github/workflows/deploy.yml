@@ -5,7 +5,7 @@ on:
       - main
       - dev
 env:
-  NODE_ENV: production
+  NODE_ENV: ${{secrets.NODE_ENV}}
 jobs:
   test:
     environment: testing
@@ -32,4 +32,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "${{ env.NODE_ENV }}"
+          echo "${{ secrets.NODE_ENV }}"
